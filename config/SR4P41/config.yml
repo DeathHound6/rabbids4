@@ -1,0 +1,13 @@
+# See config.example.yml for documentation.
+object_base: orig/SR4P41
+object: sys/main.dol
+hash: f8c623f9cc354b2b75e8cbcdf96408ac6d05e993
+symbols: config/SR4P41/symbols.txt
+splits: config/SR4P41/splits.txt
+# Change this to match the linker version.
+# See config.example.yml for a list.
+
+
+mw_comment_version: 14
+
+extract_objects: true
