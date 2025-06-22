@@ -18,7 +18,7 @@ Runtime.PPCEABI.H/global_destructor_chain.c:
 	.sbss       start:0x807A4178 end:0x807A4180
 
 Runtime.PPCEABI.H/__init_cpp_exceptions.cpp:
-	.text       start:0x8027CA08 end:0x8027CA44
+	.text       start:0x8027CA08 end:0x8027CA78
 	.ctors      start:0x80663D20 end:0x80663D24 rename:.ctors$10
 	.dtors      start:0x80663F40 end:0x80663F44 rename:.dtors$10
 	.dtors      start:0x80663F44 end:0x80663F48 rename:.dtors$15
