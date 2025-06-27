@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
 jobs:
-    - name: Upload progressreport
+    - name: Upload progress report
       uses: actions/upload-artifact@v4
       with:
         name: SR4P41_report
