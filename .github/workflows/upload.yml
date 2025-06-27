@@ -3,8 +3,8 @@ on:
   push:
   pull_request:
 jobs:
-  - name: Upload progress report
-    uses: actions/upload-artifact@v4
-    	with:
+    - name: Upload progressreport
+      uses: actions/upload-artifact@v4
+      with:
         name: SR4P41_report
         path: build/SR4P41/report.json
