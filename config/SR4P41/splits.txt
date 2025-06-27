@@ -13,9 +13,23 @@ Sections:
 	.sbss2      type:bss align:32
 	.bss        type:bss align:32
 
+LyN/Contrib/Ambre/Sources/ConFiG/ConFiG.cpp:
+	.text       start:0x8002B028 end:0x8002D350
+	.rodata     start:0x80664D18 end:0x80664EC0
+	.data       start:0x80725578 end:0x8072558C
+	.sbss       start:0x807A3990 end:0x807A39C0
+	.sdata2     start:0x807A5050 end:0x807A50C8
+	.bss        start:0x807A7FF8 end:0x807A8DF8
+
 Runtime.PPCEABI.H/global_destructor_chain.c:
 	.text       start:0x8027B508 end:0x8027B568
 	.sbss       start:0x807A4178 end:0x807A4180
+
+Runtime.PPCEABI.H/NMWException.cpp:
+	extab       start:0x80006420 end:0x80006468
+	extabindex  start:0x80006518 end:0x80006554
+	.text       start:0x8027B668 end:0x8027BCA8
+	.sdata      start:0x807A0EB0 end:0x807A0EB8
 
 Runtime.PPCEABI.H/__init_cpp_exceptions.cpp:
 	.text       start:0x8027CA08 end:0x8027CA78
@@ -23,3 +37,9 @@ Runtime.PPCEABI.H/__init_cpp_exceptions.cpp:
 	.dtors      start:0x80663F40 end:0x80663F44 rename:.dtors$10
 	.dtors      start:0x80663F44 end:0x80663F48 rename:.dtors$15
 	.sdata      start:0x807A0EC0 end:0x807A0EC8
+
+libLM/sinFuncFloat.cpp:
+	.text       start:0x803FE738 end:0x8040015C
+	.ctors      start:0x80663EAC end:0x80663EB0
+	.data       start:0x8076FEF0 end:0x807704E0
+	.bss        start:0x80867A70 end:0x80867B88

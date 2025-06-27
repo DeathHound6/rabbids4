@@ -2,8 +2,34 @@
  https://github.com/DarkRTA/rb3/blob/master/src/sdk/PowerPC_EABI_Support/Runtime/NMWException.cpp */
 
 #include "runtime.ppceabi.h/NMWException.h"
-#define ARRAY_HEADER_SIZE 16
+typedef void (*unexpected_handler)();
 
+unexpected_handler set_unexpected(unexpected_handler handler);
+void unexpected();
+
+typedef void (*terminate_handler)();
+terminate_handler set_terminate(terminate_handler handler);
+void terminate();
+
+#define ARRAY_HEADER_SIZE 16
+extern "C" {
+    extern void abort();
+}
+namespace std {
+    static void dthandler() { abort(); }
+
+    static terminate_handler thandler = dthandler;
+
+    static void duhandler() { terminate(); }
+
+    static unexpected_handler uhandler = duhandler;
+
+    extern terminate_handler set_terminate(terminate_handler handler) {
+    	terminate_handler old = thandler;
+    	thandler              = handler;
+	    return old;
+}
+}
 class __partial_array_destructor {
 public:
     void* mArrayStart;      // 0x0

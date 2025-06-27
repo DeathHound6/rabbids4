@@ -186,7 +186,7 @@ cflags_base = [
     "-fp hardware",
     "-Cpp_exceptions off",
     # "-W all",
-    "-O4,p",
+    "",
     "-inline auto",
     '-pragma "cats off"',
     '-pragma "warn_notinlined off"',
@@ -200,7 +200,7 @@ cflags_base = [
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
     f"-DVERSION_{config.version}",
-    "-sdatathreshold 0x6",
+    "-sdatathreshold 4",
 ]
 
 # Debug flags
@@ -273,7 +273,25 @@ config.libs = [
         "objects": [
             Object(NonMatching, "Runtime.PPCEABI.H/global_destructor_chain.c"),
             Object(NonMatching, "Runtime.PPCEABI.H/__init_cpp_exceptions.cpp"),
-            
+            Object(NonMatching, "Runtime.PPCEABI.H/NMWException.cpp"),
+        ],
+    },
+    {
+        "lib": "AmbreWiiRetail",
+        "mw_version": config.linker_version,
+        "cflags": cflags_base,
+        "progress_category": "ambre",
+        "objects" : [
+            Object(NonMatching, "LyN/Contrib/Ambre/Sources/ConFiG/ConFiG.cpp"),
+        ],
+    },
+    {
+        "lib": "libLM",
+        "mw_version": config.linker_version,
+        "cflags": cflags_base,
+        "progress_category": "liblm",
+        "objects": [
+            Object(NonMatching, "libLM/sinFuncFloat.cpp"),
         ],
     },
 ]
@@ -301,6 +319,8 @@ def link_order_callback(module_id: int, objects: List[str]) -> List[str]:
 config.progress_categories = [
     ProgressCategory("game", "Game Code"),
     ProgressCategory("sdk", "SDK Code"),
+    ProgressCategory("ambre", "Ambre Code"),
+    ProgressCategory("liblm", "libLM Code"),
 ]
 config.progress_each_module = args.verbose
 # Optional extra arguments to `objdiff-cli report generate`
