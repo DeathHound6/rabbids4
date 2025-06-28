@@ -5,6 +5,7 @@
 #include "Runtime.PPCEABI.H/Gecko_ExceptionPPC.h"
 
 static s32 fragmentID = -2;
+
 void __init_cpp_exceptions(void) {
     if (fragmentID == -2)
     {
@@ -13,6 +14,7 @@ void __init_cpp_exceptions(void) {
         fragmentID = __register_fragment(_eti_init_info, R2);
     }
 }
+
 void __fini_cpp_exceptions() {
     if (fragmentID != -2)
     {
@@ -20,6 +22,7 @@ void __fini_cpp_exceptions() {
         fragmentID = -2;
     }
 }
+
 #pragma push
 #pragma force_active on
 #pragma section ".ctors$10"

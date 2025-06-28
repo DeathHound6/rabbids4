@@ -186,7 +186,6 @@ cflags_base = [
     "-fp hardware",
     "-Cpp_exceptions off",
     # "-W all",
-    "",
     "-inline auto",
     '-pragma "cats off"',
     '-pragma "warn_notinlined off"',
@@ -209,16 +208,6 @@ if args.debug:
     cflags_base.extend(["-sym dwarf-2", "-DDEBUG=1"])
 else:
     cflags_base.append("-DNDEBUG=1")
-
-# Metrowerks library flags
-cflags_runtime = [
-    *cflags_base,
-    "-use_lmw_stmw on",
-    "-str reuse,pool,readonly",
-    "-gccinc",
-    "-common off",
-    "-inline auto",
-]
 
 # REL flags
 cflags_rel = [
@@ -267,12 +256,21 @@ config.warn_missing_source = False
 config.libs = [
     {
         "lib": "Runtime.PPCEABI.H",
-        "mw_version": config.linker_version,
-        "cflags": cflags_runtime,
+        "mw_version": "Wii/1.0",
+        "cflags": [
+            *cflags_base,
+            "-O4,p",
+            "-func_align 4",
+            "-use_lmw_stmw on",
+            "-str reuse,pool,readonly",
+            "-gccinc",
+            "-common off",
+            "-inline auto",
+        ],
         "progress_category": "sdk",  # str | List[str]
         "objects": [
-            Object(NonMatching, "Runtime.PPCEABI.H/global_destructor_chain.c"),
-            Object(NonMatching, "Runtime.PPCEABI.H/__init_cpp_exceptions.cpp"),
+            Object(MatchingFor("SR4P41"), "Runtime.PPCEABI.H/global_destructor_chain.c"),
+            Object(MatchingFor("SR4P41"), "Runtime.PPCEABI.H/__init_cpp_exceptions.cpp"),
             Object(NonMatching, "Runtime.PPCEABI.H/NMWException.cpp"),
         ],
     },

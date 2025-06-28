@@ -1,5 +1,4 @@
 #include "Runtime.PPCEABI.H/global_destructor_chain.h"
-#include "Runtime.PPCEABI.H/__init_cpp_exceptions.h"
 
 DtorLink* __global_destructor_chain;
 

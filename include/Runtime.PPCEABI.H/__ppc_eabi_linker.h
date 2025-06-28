@@ -2,7 +2,8 @@
     #define __PPC_EAB_LINKER_H
 
     #include "global.h"
-    #include "compiler_macros.h"
+    #include "compiler_macros.h" // IWYU pragma: export
+
     typedef struct __eti_init_info {
         void* eti_start;
         void* eti_end;
