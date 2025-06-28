@@ -11,7 +11,6 @@ ldscript_template: config/SR4P41/ldscript.lcf
 mw_comment_version: 14
 block_relocations:
 - source: .text:0x803FEBE4
-
   end: .text:0x803fee88
 - target: .bss:0x807A89F8
 - target: .bss:0x807B3118

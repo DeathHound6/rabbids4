@@ -12,7 +12,6 @@ typedef struct DtorLink {
     void* object;
 } DtorLink;
 
-DtorLink* __global_destructor_chain;
 void* __register_global_object(void *object, DtorFunction destructor, DtorLink *regmem);
 void __destroy_global_chain(void);
 

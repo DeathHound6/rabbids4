@@ -1,10 +1,9 @@
 /* somewhat borrowed from https://github.com/ThePlayerRolo/LegoCloneWarsWii/blob/main/include/types.h */
-#include "msl_c.ppceabi.bare.h/PowerPC_EABI_Support/MSL/MSL_C/stddef.h"
-
 #ifndef TYPES_H
+#define TYPES_H
+
 typedef int BOOL;
 
-#define TYPES_H
 typedef int BOOL;
 typedef signed char s8;
 typedef signed short s16;
@@ -48,4 +47,5 @@ typedef volatile double vf64;
 #undef FALSE
 #endif
 #define FALSE 0
+
 #endif //TYPES_H
