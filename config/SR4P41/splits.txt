@@ -21,6 +21,9 @@ LyN/Contrib/Ambre/Sources/ConFiG/ConFiG.cpp:
 	.sdata2     start:0x807A5050 end:0x807A50C8
 	.bss        start:0x807A7FF8 end:0x807A8DF8
 
+Runtime.PPCEABI.H/__mem.c:
+	.text       start:0x8027B424 end:0x8027B440
+
 Runtime.PPCEABI.H/global_destructor_chain.c:
 	.text       start:0x8027B508 end:0x8027B568
 	.sbss       start:0x807A4178 end:0x807A4180

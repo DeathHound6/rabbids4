@@ -272,6 +272,7 @@ config.libs = [
             Object(MatchingFor("SR4P41"), "Runtime.PPCEABI.H/global_destructor_chain.c"),
             Object(MatchingFor("SR4P41"), "Runtime.PPCEABI.H/__init_cpp_exceptions.cpp"),
             Object(NonMatching, "Runtime.PPCEABI.H/NMWException.cpp"),
+            Object(NonMatching, "Runtime.PPCEABI.H/__mem.c"),
         ],
     },
     {
