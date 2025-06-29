@@ -1,4 +1,4 @@
-#include "stddef.h"
+#include "msl_c.ppceabi.bare.h/PowerPC_EABI_Support/MSL/MSL_C//stddef.h"
 
 void* memcpy(void* dst, const void* src, size_t n) {
     const unsigned char* s;
